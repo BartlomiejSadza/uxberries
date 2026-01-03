@@ -1,0 +1,26 @@
+---
+interface Props {
+  type: string;
+}
+
+const { type } = Astro.props;
+
+const colorMappings: { [key: string]: string } = {
+  "MULTI-PAGE": "border-[#ff8514] bg-[#391c0f] text-[#ff8514]",
+  LANDING: "border-[#17A600] bg-[#0B220B] text-[#17A600]",
+  WIZYTÓWKA: "border-[#B63EFF] bg-[#2A0D3E] text-[#B63EFF]",
+  "E-COMMERCE": "border-[#2E80FC] bg-[#0F1B3D] text-[#2E80FC]",
+  BRANDING: "border-[#C2002E] bg-[#280219] text-[#C2002E]",
+  PRAKTYKA: "border-[#7A7A7A] bg-[#1E1923] text-[#7A7A7A]",
+};
+
+const getColor = (text: string) => {
+  return colorMappings[text] || "bg-transparent";
+};
+---
+
+<div
+  class={`w-fit whitespace-nowrap rounded-lg text-[13px] leading-[13px] uppercase font-semibold px-5 py-[15px] border-[1.5px] ${getColor(type.toUpperCase())}`}
+>
+  {type}
+</div>

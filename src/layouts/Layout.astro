@@ -1,0 +1,35 @@
+---
+import Nav from "../components/Nav.astro";
+import "../styles/globals.css";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pl" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="A website for science group UXBerries" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content="UXBerries" />
+    <meta
+      property="og:description"
+      content="A website for science group UXBerries"
+    />
+    <meta name="robots" content="noindex" />
+    <meta property="og:url" content="https://uxberries.pl" />
+    <meta property="og:image" content="https://uxberries.pl/og-image.png" />
+    <meta property="og:locale" content="pl_PL" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Nav />
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import Menu from "./Menu";
+---
+
+<nav class="absolute z-10 flex h-24 w-full items-center justify-center">
+  <Image
+    class="lg:hidden"
+    src="/uxberries_long_white.svg"
+    alt="logo"
+    width="112"
+    height="17"
+    quality="100"
+    loading="eager"
+  />
+  <Menu client:load />
+  <ul
+    class="mx-16 hidden w-full items-center gap-12 text-[1.125rem] font-medium lg:flex xl:mx-36"
+  >
+    <li>
+      <Image
+        src="/uxberries_long_white.svg"
+        alt="logo"
+        width="147"
+        height="22"
+        quality="100"
+        loading="eager"
+        class="object-cover"
+      />
+    </li>
+    <li class="hover:cursor-pointer hover:text-hover">
+      <a href="#o-nas">O nas</a>
+    </li>
+    <li class="grow">
+      <a href="#portfolio" class="hover:cursor-pointer hover:text-hover"
+        >Portfolio</a
+      >
+    </li>
+    <li class="hover:cursor-pointer hover:text-hover">
+      <a
+        href="mailto:uxberries@gmail.com"
+        class="rounded-[0.625rem] border-[1.5px] bg-white/20 px-[1.125rem] py-[0.625rem] hover:border-hover hover:bg-hover/20"
+        title="Napisz do nas!"
+        >
+        uxberries@gmail.com
+        <img
+          src="/arrow-right-up.svg"
+          alt="arrow"
+          width="16"
+          height="16"
+          class="-mt-1 inline-block h-4 w-4 align-middle"
+        />
+      </a>
+    </li>
+  </ul>
+</nav>
